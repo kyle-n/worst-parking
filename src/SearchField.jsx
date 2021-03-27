@@ -1,12 +1,12 @@
 import React, { useState } from 'react';
 import ApiConnector from './ApiConnector';
 
-const SearchField = () => {
+const SearchField = (props) => {
   const [query, setQuery] = useState('');
 
   const onQueryChange = (e) => {
     setQuery(e.target.value);
-    ApiConnector.searchWorstLots(e.target.value).then(body => console.log(body.business))
+    ApiConnector.searchWorstLots(e.target.value).then(props.setResponse);
   }
 
   return (
