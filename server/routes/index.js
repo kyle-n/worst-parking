@@ -7,7 +7,7 @@ router.get('/message', function(req, res, next) {
 });
 
 router.get('/worst-parking-lots', (req, resp) => {
-  const url = `https://api.yelp.com/v3/businesses/search?location=${req.params.location}&term=parking&sort_by=rating`;
+  const url = `https://api.yelp.com/v3/businesses/search?location=${req.query.location}&term=parking&sort_by=rating`;
   // todo: store API key in env var
   // todo: validation for location
   axios.get(url, {headers: {
