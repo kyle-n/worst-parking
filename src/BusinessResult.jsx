@@ -1,4 +1,6 @@
 import React from 'react';
+import ParkingLotScoreCalculator from './ParkingLotScore';
+import ParkingLotScore from './ParkingLotScore';
 
 const BusinessResult = (props) => {
   return (
@@ -10,11 +12,24 @@ const BusinessResult = (props) => {
       </h2>
       {/* todo: no inline styling */}
       <div style={{display: 'flex', justifyContent: 'space-between'}}>
-        <BusinessMetadata business={props.business} />
+        <div style={{display: 'flex', flexDirection: 'column'}}>
+          <BusinessMetadata business={props.business} />
+          <ParkingLotScoreDisplay business={props.business} />
+        </div>
         <img src={props.business.image_url} alt={props.business.name}
               style={{width: 'auto', height: '5rem'}}
         />
       </div>
+    </div>
+  )
+}
+
+const ParkingLotScoreDisplay = (props) => {
+  const score = ParkingLotScoreCalculator.calculateScore(props.business.review_count, props.business.rating);
+  return (
+    <div>
+      <strong>Parking Lot Score: </strong>
+      {score}
     </div>
   )
 }
