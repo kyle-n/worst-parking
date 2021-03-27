@@ -13,11 +13,21 @@ const BusinessResult = (props) => {
           <ParkingLotScoreDisplay business={props.business} />
         </div>
       </div>
+      <BusinessResultImage business={props.business} />
+    </div>
+  )
+}
+
+const BusinessResultImage = (props) => {
+  if (props.business.image_url) {
+    return (
         <img src={props.business.image_url} alt={props.business.name}
               style={{width: 'auto', height: '5rem'}}
         />
-    </div>
-  )
+    )
+  } else {
+    return null;
+  }
 }
 
 const BusinessResultTitle = (props) => (
