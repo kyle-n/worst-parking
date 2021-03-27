@@ -4,25 +4,29 @@ import ParkingLotScore from './ParkingLotScore';
 
 const BusinessResult = (props) => {
   return (
-    <div id={props.business.id} style={{border: '1px solid gray', borderRadius: '10px', margin: '2rem', padding: '1rem'}}>
-      <h2>
-        <a href={props.business.url} target="_blank">
-          {props.business.name}
-        </a>
-      </h2>
+    <div id={props.business.id} style={{border: '1px solid gray', borderRadius: '10px', margin: '2rem', padding: '1rem', display: 'flex', justifyContent: 'space-between'}}>
       {/* todo: no inline styling */}
       <div style={{display: 'flex', justifyContent: 'space-between'}}>
         <div style={{display: 'flex', flexDirection: 'column'}}>
+          <BusinessResultTitle business={props.business} />
           <BusinessMetadata business={props.business} />
           <ParkingLotScoreDisplay business={props.business} />
         </div>
+      </div>
         <img src={props.business.image_url} alt={props.business.name}
               style={{width: 'auto', height: '5rem'}}
         />
-      </div>
     </div>
   )
 }
+
+const BusinessResultTitle = (props) => (
+        <h2 style={{marginTop: 0}}>
+          <a href={props.business.url} target="_blank">
+            {props.business.name}
+          </a>
+        </h2>
+)
 
 const ParkingLotScoreDisplay = (props) => {
   const score = ParkingLotScoreCalculator.calculateScore(props.business.review_count, props.business.rating);
