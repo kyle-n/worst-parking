@@ -6,6 +6,7 @@ const SearchField = (props) => {
 
   const onQueryChange = (e) => {
     setQuery(e.target.value);
+    // todo: debounce
     ApiConnector.searchWorstLots(e.target.value).then(props.setResponse);
   }
 
