@@ -5,8 +5,11 @@ const BusinessResult = (props) => {
     <div id={props.business.id}>
       <h2>{props.business.name}</h2>
       {/* todo: no inline styling */}
-      <BusinessMetadata business={props.business} />
       <div style={{display: 'flex', justifyContent: 'space-between'}}>
+        <BusinessMetadata business={props.business} />
+        <img src={props.business.image_url} alt={props.business.name}
+              style={{width: 'auto', height: '5rem'}}
+        />
       </div>
     </div>
   )
