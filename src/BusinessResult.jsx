@@ -42,14 +42,14 @@ const BusinessMetadata = (props) => (
   <div>
     {getBusinessAddress(props.business)}
     <Divider />
-    {props.business.rating} / 5
+    {props.business.rating} ⭐ / 5
     <Divider />
     {props.business.review_count} reviews
   </div>
 );
 
 const Divider = () => (
-  <strong> | </strong>
+  <strong style={{margin: '0 0.5rem'}}> | </strong>
 );
 
 const getBusinessAddress = (business) => {
