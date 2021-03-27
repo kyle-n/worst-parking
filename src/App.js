@@ -6,7 +6,7 @@ import BusinessResult from './BusinessResult';
 const App = () => {
   const [response, setResponse] = useState({businesses: [], total: undefined})
   return (
-    <main>
+    <main style={{padding: '2rem'}}>
       <h1>Worst Parking Lots</h1>
       <SearchField setResponse={setResponse} />
       {response.businesses.map(business => {

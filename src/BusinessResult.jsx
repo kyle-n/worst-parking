@@ -4,7 +4,7 @@ import ParkingLotScore from './ParkingLotScore';
 
 const BusinessResult = (props) => {
   return (
-    <div id={props.business.id}>
+    <div id={props.business.id} style={{border: '1px solid gray', borderRadius: '10px', margin: '2rem', padding: '1rem'}}>
       <h2>
         <a href={props.business.url} target="_blank">
           {props.business.name}
@@ -29,7 +29,7 @@ const ParkingLotScoreDisplay = (props) => {
   return (
     <div>
       <strong>Parking Lot Score: </strong>
-      {score}
+      {score.toFixed(2)}
     </div>
   )
 }
