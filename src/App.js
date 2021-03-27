@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import './App.css';
 import SearchField from './SearchField';
+import BusinessResult from './BusinessResult';
 
 const App = () => {
   const [response, setResponse] = useState({businesses: [], total: undefined})
@@ -10,7 +11,7 @@ const App = () => {
       <SearchField setResponse={setResponse} />
       {response.businesses.map(business => {
         return (
-          <p key={business.id}>{business.name}</p>
+          <BusinessResult key={business.id} business={business} />
         );
       })}
     </main>
