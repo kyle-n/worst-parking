@@ -3,7 +3,11 @@ import React from 'react';
 const BusinessResult = (props) => {
   return (
     <div id={props.business.id}>
-      <h2>{props.business.name}</h2>
+      <h2>
+        <a href={props.business.url} target="_blank">
+          {props.business.name}
+        </a>
+      </h2>
       {/* todo: no inline styling */}
       <div style={{display: 'flex', justifyContent: 'space-between'}}>
         <BusinessMetadata business={props.business} />
