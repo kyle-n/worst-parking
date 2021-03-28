@@ -1,58 +1,28 @@
-# Express React Starter
+# worst-parking
 
-This is a template for using Express and React in the same project. It is based on Create React App.
-
-Read the article: [Introducing Express React Starter](https://medium.com/burke-knows-words/introducing-express-react-starter-b6d299206a3a)
-
-OR...
-
-## Prerequisites
-* [create-react-app](https://github.com/facebookincubator/create-react-app)
+Simple React/Node web app to search the worst parking lots at any given location.
 
 ## Installing
 
 ```bash
-git clone 'this-repo-url' app-name
-cd app-name
-npm install
-```
-
-## Running The App
-
-The template can be run in development, or in production. For development, use the following workflow.
-
-### Start the Express Server
-
-```bash
-node server/server.js
-```
-
-### Start Create React App
-
-In a different terminal tab...
-
-```bash
+git clone git@github.com:kyle-n/worst-parking.git
+cd worst-parking
+npm i
 npm start
 ```
 
-![Imgur](http://i.imgur.com/f7Nlvx4.png)
+The scripts will run the server and open the frontend in your default browser.
 
-The "Welcome to React" is a message that comes from the Express server. 
+## Features cut for time
 
-### What Is Happening Here?
+I tried to stick as close as I could to one hour. In real development environments, of course you don't have unlimited time. Here are some features cut for time:
 
-Create React App and the Express server are running on different processes. This is so that React can still use in memory Webpack to do hot reloads really fast.
+- Storing API keys in environmental vars on the backend
+- Validation for the `location` query parameter when searching Yelp
+- API error handling
+- A reusable CSS layout system instead of inline styling
+- Debouncing searches
+- Backend functional tests
+- Frontend unit tests
 
-All AJAX/fetch requests to `/api` are sent back to the Express server which is serving all `/api` routes from the `routes/index.js` file. This is done via a proxy setup in the `package.json` file.
-
-## Building For Production
-
-In production, you want Express to serve up your app.
-
-### Build React App
-
-```bash
-npm build
-```
-
-Now simply visit the Express app at 'http://localhost:3001' and you will see your app served from the 'build' folder. That's all there is to it!
+Credits: Based off [burkeholland/express-react-starter](https://github.com/burkeholland/express-react-starter).
